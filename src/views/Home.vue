@@ -1,5 +1,6 @@
 <template>
 	<div>
+    <h1>Mod Scraper</h1>
 		<div class="flexContainer">
 			<el-input type="text" class="searchBox" v-model="query" />
 			<el-button class="submitBtn" width="10rem"  icon="el-icon-search" @click="search()" :loading="loadingStatus" round size="medium">Search</el-button>
@@ -15,7 +16,7 @@
         <el-checkbox v-for="col in columnOptions" :label="col" :key="col">{{formatTerm(col)}}</el-checkbox>
       </el-checkbox-group>
     </div>
-    <el-table :header-cell-style="{ color: '#F7FAFF', background: '#14213D' }" :default-sort = "{prop: 'name', order: 'ascending'}" height="750" border :data="displayedData" style="width: 100%"> 
+    <el-table :header-cell-style="{ color: '#F7FAFF', background: '#14213D' }" :default-sort = "{prop: 'name', order: 'ascending'}" sortable height="750" border :data="displayedData" style="width: 100%"> 
 
       <el-table-column prop="icon_url" label="Icon" width="80" fixed>
         <template v-slot="scope">
