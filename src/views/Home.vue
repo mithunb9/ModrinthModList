@@ -1,6 +1,7 @@
 <template>
 	<div>
     <h1>Mod Scraper</h1>
+    <p>Powered by the <a href="https://github.com/modrinth/labrinth">Labrinth API</a> made by the <a href="https://github.com/modrinth">Modrinth team.</a></p>
 		<div class="flexContainer">
 			<el-input type="text" class="searchBox" v-model="query" />
 			<el-button class="submitBtn" width="10rem"  icon="el-icon-search" @click="search()" :loading="loadingStatus" round size="medium">Search</el-button>
@@ -24,7 +25,11 @@
         </template>
       </el-table-column>
       
-      <el-table-column prop="name" label="Name" width="180" fixed></el-table-column>
+      <el-table-column label="Name" width="180" fixed>
+        <template v-slot="scope">
+          <a target="_blank" :href="scope.row.modUrl">{{ scope.row.name }}</a>
+        </template>
+      </el-table-column>
 
       <el-table-column v-for="col in columns" :key="col" :prop="col" :label="formatTerm(col)"></el-table-column>
       
@@ -119,6 +124,7 @@ export default {
           server: this.formatTerm(queryData.server_side),
           categories: this.formatTerm(queryData.categories),
           license: queryData.license.id,
+          modUrl: `https://modrinth.com/mod/${queryData.id}`
         } 
 
         if (queryData.versions) {
