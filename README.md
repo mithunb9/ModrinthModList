@@ -1,5 +1,6 @@
 # modscraper
 
+Uses the Modrinth Labrinth API to create lists with mods. Check out modrinth [here](https://github.com/modrinth).
 ## Project setup
 ```
 npm install
@@ -19,6 +20,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
