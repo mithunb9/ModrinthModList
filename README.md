@@ -1,6 +1,6 @@
 # modscraper
 
-Uses the Modrinth Labrinth API to create lists with mods. Check out modrinth [here](https://github.com/modrinth).
+Uses the Modrinth [Labrinth API](https://github.com/modrinth/labrinth) to create lists with mods. Check out modrinth [here](https://github.com/modrinth).
 ## Project setup
 ```
 npm install
